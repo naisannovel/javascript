@@ -1,19 +1,17 @@
+function sum(a){
 
-function sum(a,b){
-    return a + b;
+    return function(b){
+
+        return function(c){
+
+            return a + b + c;
+
+        }
+    }
 }
 
-function sub(num){
-    return num - 2;
-}
+let result = sum(10)(15)(25);
+console.log(result);    // 50
 
-function multiply(num){
-    return num * num;
-}
-
-let result = multiply(sub(sum(2,3)));
-console.log(result);    // 9
-
-// akta function ar input aakare onno akta function ar value asbe.
-// abar onno function tar input aakare onno arekta function ar value asbe. 
-// ata ke currying bole.
+// akta function ar vitor a onek gulo function return kora thakle segulo
+// pasapasi call kora k currying bole.
