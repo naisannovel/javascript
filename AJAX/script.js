@@ -190,3 +190,168 @@
 //     // console.log(xhr);
 // })
 
+
+// fetch('https://jsonplaceholder.typicode.com/posts',{
+//     method:'POST',
+//     body: JSON.stringify({
+//         name:'novel',
+//         id:10
+//     }),
+//     headers:{
+//         'content-type':'application/json; charset=UTF-8'
+//     }
+// })
+// .then((v)=> {
+//     let x = JSON.parse(v)
+//     return x;
+// })
+// .then((v)=>console.log(v))
+
+// let a = {
+//     nam: 'naisan',
+//     salary: 50000,
+//     sum: function(){
+//         this.salary = this.salary + 1000;
+//         return this.salary;
+//     }
+// }
+
+// let b = {
+//     nam: 'novel',
+//     salary: 40000,
+// }
+
+// let x = a.sum.bind(b);
+
+// console.log(x());
+
+
+// class person{
+//     constructor(name,id){
+//         this.name = name;
+//         this.id = id;
+//     }
+//     conca(){
+//         console.log(this.a + this.b);
+//     }
+// }
+// let y = {
+//     a: 10,
+//     b:20
+// }
+// let x = new person()
+// let o = x.conca.bind(y)
+// console.log(x.conca());
+
+
+// let pro = new Promise((res,rej)=>{
+//     let xhr = new XMLHttpRequest()
+    
+//     xhr.open('GET','https://api.github.com/users')
+//     xhr.onload= function() {
+//         if(this.status == 200){
+//             res(this.responseText)
+//         }
+//     }
+//     xhr.send()
+// })
+
+// pro.then((x)=> {
+//     return JSON.parse(x)
+// }).then((v)=>console.log(v))
+
+// let p = JSON.parse()
+// // let p2 = new Object(p1)
+// console.log(p);
+
+// let x = '{"name":"test","salary":"123","age":"23"}'
+// let y = JSON.parse(x)
+// const f = new Object();
+// f.name = y.name;
+// f.salary = y.salary;
+// f.age = y.age;
+// console.log(f);
+
+// let abc = {
+//     name:'naisan',
+//     salary:15000
+// }
+// fetch('https://jsonplaceholder.typicode.com/posts',{
+//         method:'POST',
+//         headers:{'content-type':'application/json'},
+//         body:JSON.stringify(abc)
+//     })
+//     .then(r => r)
+//     .then(d=>console.log(d))
+    
+
+// let xhr = new XMLHttpRequest();
+// xhr.open('POST','https://jsonplaceholder.typicode.com/posts',true)
+
+// xhr.onprogress = function() {
+//     console.log('progressing...');
+// }
+// // xhr.onload = function () {
+// //     // console.log(this.responseText);
+    
+// // }
+
+// xhr.onload = function () {
+//     if (this.status == 201) {
+//         alert(this.responseText)
+//     }
+// }
+// // xhr.onreadystatechange = function () {
+// //     if (this.readyState == 4) {
+// //         alert(this.responseText)
+// //     }
+// //     else{
+// //         console.log('kkk');
+// //     }
+// // }
+
+// xhr.setRequestHeader('Content-type', 'application/json; charset=UTF-8')
+
+// xhr.send(JSON.stringify(abc))
+
+
+// function get(url) {
+//     return new Promise(function(r,rej) {
+//         let xhr =  new XMLHttpRequest()
+//         xhr.open('GET',url,true)
+//         xhr.onload = function() {
+//             if (this.status == 200) {
+//                 r(this.responseText)
+//             }else{
+//                 rej(this.responseText)
+//             }
+//         }
+//         xhr.send()
+//     })
+// }
+
+// get('https://jsonplaceholder.typicode.com/posts')
+// .then(r=>{
+//     return JSON.parse(r)
+// })
+// .then(d=>{
+//     d.forEach(element => {
+//         console.log(element.id,element.title);
+//     });
+// })
+
+
+async function naisan(){
+    let x = await fetch('https://api.github.com/users')
+    let y = await x.json()
+    return y;
+}
+
+// let a = naisan()
+// a.then(d=>{
+//     d.forEach(element => {
+//         console.log(element.login);
+//     });
+// })
+let h = naisan()
+h.then(d=>console.log(d))
