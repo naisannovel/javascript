@@ -16,9 +16,10 @@ const callGreetFunc = greet('good morning');
 // callGreetFunc also a function. because we return inner function
 // for that callGreetFunc hold inner function.
 
-const greetingFunc = callGreetFunc('naisan');
+const greetingMsg = callGreetFunc('naisan');
+// return text for that greetingMsg hold return text
 
-console.log(greetingFunc);
+console.log(greetingMsg); // good morning naisan
 
 
 
