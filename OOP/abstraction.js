@@ -36,7 +36,8 @@ let Circle1 = function(width,height){
     
     let rectangle = function(){  // rectangle method declare as a variable
         console.log('this is rectangle method');
-    }
+        console.log(this.width);
+    }.bind(this)    // bind this variable with this cir1 object.
     
     this.draw = function(){
         console.log('this is draw method');
