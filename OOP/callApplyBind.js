@@ -31,5 +31,6 @@ sumFunc.apply( {a : 25, b : 20}, [5, 10]); // 60
 
 let result2 = sumFunc.bind( {a : 35, b : 10}, 5, 10);
 result2()
+// result2(5, 10) // we can also pass parameters like this way.
 
 
