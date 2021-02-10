@@ -147,14 +147,27 @@
 // let cir = new Circle(10,15)
 // cir.draw()
 
-let obj = {
-    name: 'naisan'
+// let obj = {
+//     name: 'naisan'
+// }
+
+// // let x = Object.getOwnPropertyDescriptor(obj,'name')
+// // console.log(x);
+
+// let pro = Object.getPrototypeOf(obj)
+// console.log(pro);
+// let des = Object.getOwnPropertyDescriptor(pro,'propertyIsEnumerable')
+// console.log(des);
+
+function Circle(name){
+    this.name = name
 }
 
-// let x = Object.getOwnPropertyDescriptor(obj,'name')
-// console.log(x);
+Circle.prototype.pi = 25412
+let name1 = new Circle('naisan')
+let name2 = new Circle('naisan')
+let name3 = new Circle('naisan')
 
-let pro = Object.getPrototypeOf(obj)
-console.log(pro);
-let des = Object.getOwnPropertyDescriptor(pro,'propertyIsEnumerable')
-console.log(des);
+console.log(name1);
+console.log(name2);
+console.log(name3);
