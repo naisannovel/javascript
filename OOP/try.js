@@ -92,3 +92,69 @@
 // let cir1 = new Circle(100,200)
 // cir1.draw()
 
+// function Circle(width,height){
+//     this.width = width
+//     this.height = height
+//     let point = {
+//         math: 95,
+//         english: 99
+//     }
+
+//     this.draw = function(){
+//         console.log('this is draw method');
+//         rectangle()
+//         console.log(point)
+//     }
+    
+//     let rectangle = function(){
+//         console.log('this is rectangle function');
+//         console.log(this.width,this.height);
+//     }.bind(this)
+
+//     Object.defineProperty(this,'point1',{
+//         get: function(){
+//             return rectangle;
+//         },
+//         set: function(value){
+//             rectangle = function(){
+//                 console.log(value);
+//             }
+//         }
+//     })
+// }
+
+// let cir = new Circle(10,20)
+// // cir.draw()
+// cir.point1 = {a:80,b:69,c:89}
+// console.log(cir.point1());
+
+
+// function Circle(width,height){
+//     this.width = width
+//     this.height = height
+
+//     this.rectangle = function(){
+//         console.log('this is rectangle method');
+//         console.log(this.width,this.height);
+//     }
+
+//     this.draw = function(){
+//          console.log('this is draw method');
+//          this.rectangle()
+//     }
+
+// }
+// let cir = new Circle(10,15)
+// cir.draw()
+
+let obj = {
+    name: 'naisan'
+}
+
+// let x = Object.getOwnPropertyDescriptor(obj,'name')
+// console.log(x);
+
+let pro = Object.getPrototypeOf(obj)
+console.log(pro);
+let des = Object.getOwnPropertyDescriptor(pro,'propertyIsEnumerable')
+console.log(des);
