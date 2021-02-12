@@ -1,0 +1,29 @@
+# to check prototype.
+Object.getPrototypeOf()
+
+# descriptor get
+Object.getOwnPropertyDescriptor(obj,'name')
+
+# descriptor set
+Object.defineProperty()
+
+# descriptor
+enumerable = traverse kora jabe ki na.
+writable = overwrite kora jabe ki na.
+configurable = delete hobe ki na.
+
+# add prototype with constructor
+constructorName.prototype.addSomething = 'something'
+
+# instance member hocce constructor ar nijer property.
+# prototype member hocce constructor ar proto/parent ar property.
+# instance constructor prototype ar property te access pabe.
+# constructor prototype instance ar property te access pabe.
+
+# nijer property kina ta check korar jonno
+ Object.hasOwnproperty('propertyName')
+
+
+let x = Object.getPrototypeOf(cir1)
+let y = Object.getPrototypeOf(x)
+console.log(y);
