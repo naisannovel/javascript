@@ -17,7 +17,7 @@ Shape.prototype.constructor = Shape                 // reset constructor
 
 // Shape.prototype.common = function(){                 // common method overwrite
 //     Common.prototype.common.call(this)      // parent common method call
-//     console.log('this overWrite common method');
+//     console.log('this is overridden common method');
 // }
 
 Shape.prototype.draw = function(){
@@ -45,7 +45,7 @@ let canEat = {
     }
 }
 
-// let person = Object.assign({},canWalk,canEat)          // return new person obj 
+// let person = Object.assign({target},canWalk,canEat)          // return new person obj 
 
 function Person(name){
     this.name = name

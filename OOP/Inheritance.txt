@@ -1,0 +1,9 @@
+# create an object from another Object.
+Object.create(objectName)
+Object.assign(objectName)
+
+# constructor reset
+name.prototype.constructor = name;
+
+# 
+Object.assign({target},sources)

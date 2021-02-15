@@ -246,29 +246,120 @@
 // console.log(obj2);
 // console.log(Object.getPrototypeOf(obj2));
 
-function Common(color){
-    this.color = color
+// function Common(color){
+//     this.color = color
+// }
+// Common.prototype = {
+//     common: function(){
+//         console.log('this is common method');
+//     }
+// }
+// let com = new Common('green')
+
+// function Draw(width,height,color){
+//     this.width = width
+//     this.height = height  
+// }
+
+// Draw.prototype = Object.create(Common.prototype);
+// Draw.prototype.constructor = Draw;
+
+// Draw.prototype.common = function(){
+//     com.common.call(this)
+//     console.log('this is common method 2');
+// }
+
+
+// let draw1 = new Draw(15,25)
+// console.log(draw1);
+
+
+// let ary = [1,2,3,2,1]
+// let ary1 = []
+
+// for (let i = 0; i < ary.length; i++) {
+//     const element = ary[i];
+//     if (ary1.indexOf(element) < 0) {
+//         ary1.push(element)
+//     }
+// }
+// console.log(ary1);
+// function Walk(color){
+//     this.color = color
+// }
+// Walk.prototype = {
+//     common: function(){
+//         console.log('this is common method');
+//     }
+// }
+
+// function Person(width,height,color){
+//     Walk.call(this,color)
+//     this.width = width
+//     this.height = height
+
+//     let draw = function(){
+//         console.log('this is draw method');
+//     }
+    // Object.defineProperty(this,'draw',{
+    //     get: function(){
+    //         return draw;
+    //     },
+    //     set:function(v){
+    //         draw = v;
+    //     }
+    // })
+// }
+
+// Person.prototype = Object.create(Walk.prototype)
+// Person.prototype.constructor = Person
+// Person.prototype.circle = function(){
+//     console.log('this is circle method');
+// }
+// let person1 = new Person(10,20,'green')
+
+// // console.log(person1);
+// let x = Object.getPrototypeOf(person1)
+// let y = Object.getPrototypeOf(x)
+// let z = Object.getPrototypeOf(y)
+
+// console.log('hello world');
+
+function Common(){
+    
 }
-Common.prototype = {
-    common: function(){
-        console.log('this is common method');
+Common.prototype.common = function(){
+            console.log('this is common method');
+        }
+function World(){
+    
+}
+World.prototype.world = function(){
+            console.log('this is world method');
+        }
+
+
+// let obj = new Common(20,25)
+// console.log(obj);
+
+function Draw(width,height){
+    this.width = width
+    this.height = height 
+
+    let draw = function(){
+        console.log('this is draw method');
     }
 }
-let com = new Common('green')
 
-function Draw(width,height,color){
-    this.width = width
-    this.height = height  
-}
 
-Draw.prototype = Object.create(Common.prototype);
-Draw.prototype.constructor = Draw;
-
+Draw.prototype.constructor = Draw
+Object.assign(Draw.prototype,Common.prototype,World.prototype)
 Draw.prototype.common = function(){
-    com.common.call(this)
-    console.log('this is common method 2');
-}
+        console.log('this is common method 2');
+    }
+    Draw.prototype.naisan = function(){
+            console.log('this is naisan method');
+        }
 
-
-let draw1 = new Draw(15,25)
+let draw1 = new Draw(25,98)
 console.log(draw1);
